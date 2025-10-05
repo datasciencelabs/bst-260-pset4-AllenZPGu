@@ -29,7 +29,7 @@ census_key = readLines("census-key.R", n=1)
 
 ---
 
-**Task 2: The [US Census API User Guide](https://www.census.gov/content/dam/Census/data/developers/api-user-guide/api-user-guide.pdf) provides details on how to leverage this valuable resource. We are interested in vintage population estimates for years 2021 and 2022. From the documentation we find that the _endpoint_ is:**
+**Task 2: The [US Census API User Guide](https://www.census.gov/content/dam/Census/data/developers/api-user-guide/api-user-guide.pdf) provides details on how to leverage this valuable resource. We are interested in vintage population estimates for years 2020 and 2021. From the documentation we find that the _endpoint_ is:**
 
 
 ```{r}
@@ -125,12 +125,12 @@ population |> head() |> kable()
 
 The following code confirms that the District of Columbia and Puerto Rico have had their abbreviations successfully inserted:
 ```{r}
-population |> filter(state %in% c("DC", "PR"))
+population |> filter(state %in% c("DC", "PR")) |> kable()
 ```
 
 ---
 
-**Task 7: As a check, make a barplot of states' 2021 and 2022 populations. Show the state names in the y-axis ordered by population size.  Hint: You will need to use `reorder` and use `facet_wrap`.**
+**Task 7: As a check, make a barplot of states' 2020 and 2021 populations. Show the state names in the y-axis ordered by population size.  Hint: You will need to use `reorder` and use `facet_wrap`.**
 
 ```{r, fig.height=8, fig.width=9}
 population |> 
@@ -353,7 +353,7 @@ deaths <- deaths_raw |>
 print(min(deaths$date))
 print(max(deaths$date))
 ```
-The above code shows the range of the data.
+The above code shows the time range of the data.
 
 ```{r, fig.width=10, fig.height=8}
 # Your code here
